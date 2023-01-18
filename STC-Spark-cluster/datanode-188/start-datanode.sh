@@ -1,0 +1,14 @@
+docker run -d --net sparknet \
+        -p 8088:8088 \
+        -p 4040:4040 \
+        -p 18080:18080 \
+        -p 8080:8080 \
+        -v /home/poc/cluster/hadoop/configs/hdfs-site.xml:/home/hadoop/hadoop/etc/hadoop/hdfs-site.xml \
+        -v /home/poc/cluster/hadoop/configs/workers:/home/hadoop/hadoop/etc/hadoop/workers \
+        -v /home/poc/cluster/hadoop/configs/workers:/home/hadoop/spark/conf/workers \
+        -v /home/poc/cluster/spark/configs/spark-defaults.conf:/home/hadoop/spark/conf/spark-defaults.conf \
+        -v /home/poc/cluster/hadoop/data/data:/home/hadoop/hadoop/dfs/data \
+        -v /home/poc/cluster/hadoop/data/tmp:/tmp \
+        --hostname worker3 \
+        --name worker3 \
+        -it fashi/spark:3.3.1

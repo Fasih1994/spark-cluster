@@ -1,0 +1,19 @@
+docker run -d --net sparknet \
+        -p 8088:8088 \
+        -p 4040:4040 \
+        -p 18080:18080 \
+        -p 8080:8080 \
+        -v /home/poc/cluster/hadoop/configs/core-site.xml:/home/hadoop/hadoop/etc/hadoop/core-site.xml \
+        -v /home/poc/cluster/hadoop/configs/hdfs-site.xml:/home/hadoop/hadoop/etc/hadoop/hdfs-site.xml \
+        -v /home/poc/cluster/hadoop/configs/yarn-site.xml:/home/hadoop/hadoop/etc/hadoop/yarn-site.xml \
+        -v /home/poc/cluster/hadoop/configs/mapred-site.xml:/home/hadoop/hadoop/etc/hadoop/mapred-site.xml \
+        -v /home/poc/cluster/hadoop/configs/capacity-scheduler.xml:/home/hadoop/hadoop/etc/hadoop/capacity-scheduler.xml \
+        -v /home/poc/cluster/hadoop/configs/workers:/home/hadoop/hadoop/etc/hadoop/workers \
+        -v /home/poc/cluster/hadoop/configs/workers:/home/hadoop/spark/conf/workers \
+        -v /home/poc/cluster/spark/configs/spark-defaults.conf:/home/hadoop/spark/conf/spark-defaults.conf \
+        -v /home/poc/cluster/hadoop/data/namesecondary:/home/hadoop/hadoop/dfs/namesecondary \
+        -v /home/poc/cluster/hadoop/data/name:/home/hadoop/hadoop/dfs/name \
+        -v /home/poc/cluster/hadoop/data/tmp:/tmp \
+        --hostname nodemaster \
+        --name nodemaster \
+        -it fashi/spark:3.3.1

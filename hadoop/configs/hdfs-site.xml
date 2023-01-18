@@ -1,0 +1,22 @@
+<configuration>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>/home/hadoop/hadoop/dfs/name</value>
+    </property>
+    <property>
+        <name>dfs.namenode.checkpoint.dir</name>
+        <value>/home/hadoop/hadoop/dfs/namesecondary</value>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>/home/hadoop/hadoop/dfs/data</value>
+    </property>
+    <property>
+        <name>dfs.replication</name>
+        <value>2</value>
+    </property>
+	<property>
+    <name>dfs.blocksize</name>
+    <value>134217728</value>
+  </property>
+</configuration>

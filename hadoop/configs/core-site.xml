@@ -1,0 +1,7 @@
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://nodemaster:9000</value>
+    </property>
+</configuration>
+
